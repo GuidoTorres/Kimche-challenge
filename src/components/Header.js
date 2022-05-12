@@ -1,10 +1,12 @@
 import React from "react";
 
+import "../styles/header.css"
+
 const Header = () => {
     return (
-        <div>
-            <p>Country Search</p>
-            <p>Some random text</p>
+        <div className="header_container">
+            <h1>Country Search</h1>
+            <p>Search by continent or language</p>
         </div>
     )
 }

@@ -1,0 +1,15 @@
+.search_container {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search_container input {
+  width: 100%;
+  height: 30px;
+  border-radius: 6px;
+  border: none;
+  padding-left: 5px;
+  font-size: 15px;
+}

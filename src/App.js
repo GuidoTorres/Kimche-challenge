@@ -5,9 +5,10 @@ import { ApolloProvider } from "@apollo/react-hooks";
 import Home from "./pages/Home";
 
 const client = new ApolloClient({
-  uri: "https://48p1r2roz4.sse.codesandbox.io",
+  uri: process.env.REACT_APP_GRAPHQL_ENDPOINT,
 });
 
+console.log(process.env.REACT_APP_GRAPHQL_ENDPOINT);
 const App = () => (
   <ApolloProvider client={client}>
     <div>

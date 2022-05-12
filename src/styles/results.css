@@ -1,0 +1,33 @@
+.result_container {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 20px;
+}
+
+.result_container p {
+  color: #edeff1;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.result_container span {
+  font-size: 80px;
+}
+
+.info_container {
+  border: 1px solid #edeff1;
+  margin-top: 10px;
+  border-radius: 6px;
+  padding: 8px;
+}
+
+.info_container div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.info_container div p {
+  margin-top: -10px;
+}
