@@ -5,10 +5,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import "../styles/searchbar.css";
 
 const SearchBar = () => {
-  const {
-    // setSearchTerm, searchTerm,
-    addTerm,
-  } = useContext(HomeContext);
+  const { addTerm } = useContext(HomeContext);
 
   return (
     <div className="search_container">
