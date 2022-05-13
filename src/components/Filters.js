@@ -11,10 +11,9 @@ const Filters = () => {
         <p>Group by : </p>
       </div>
       <div className="buttons_container">
-        <FilterButton text="Continent" />
-        <FilterButton text="Language" />
+        <FilterButton />
       </div>
-    </div>
+    </div> 
   );
 };
 

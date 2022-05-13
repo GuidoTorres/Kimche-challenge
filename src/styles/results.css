@@ -2,12 +2,17 @@
   padding-left: 20px;
   padding-right: 20px;
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
 }
+
+
 
 .result_container p {
   color: #edeff1;
   font-size: 16px;
   font-weight: bold;
+  margin-top: 10px;
 }
 
 .result_container span {
@@ -15,10 +20,13 @@
 }
 
 .info_container {
-  margin-top: 10px;
+  margin-top: 8px;
   border-radius: 6px;
   padding: 8px;
-  background-color: #2A2F3B;
+  background-color: #2a2f3b;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .info_container div {
@@ -28,6 +36,6 @@
   align-items: center;
 }
 
-.info_container div p {
-  margin-top: -10px;
-}
+
+
+

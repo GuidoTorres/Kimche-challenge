@@ -1,27 +1,26 @@
-import React, {useContext } from "react";
+import React, { useContext } from "react";
 import HomeContext from "../context/HomeContext";
 
-const FilterButton = ({ text }) => {
-  const { setGroupBy, groupBy, setButtonColor, buttonColor } =
-    useContext(HomeContext);
+const FilterButton = () => {
+  const { filterGroupBy, groupBy } = useContext(HomeContext);
 
   return (
     <div>
       <button
         style={{
-          backgroundColor:
-            groupBy === ""
-              ? buttonColor
-              : text === "Continent"
-              ? "#7B52F0"
-              : "",
+          backgroundColor: groupBy === "Continent" ? "#7B52F0" : "#2A2F3B",
         }}
-        onClick={() => {
-          setGroupBy(text);
-          setButtonColor(text);
-        }}
+        onClick={() => filterGroupBy("Continent")}
       >
-        {text}
+        Continent
+      </button>
+      <button
+        style={{
+          backgroundColor: groupBy === "Language" ? "#7B52F0" : "#2A2F3B",
+        }}
+        onClick={() => filterGroupBy("Language")}
+      >
+        Language
       </button>
     </div>
   );
