@@ -1,11 +1,15 @@
-import React, { useState } from "react";
-
+import React, { useContext } from "react";
+import HomeContext from "../context/HomeContext";
 import "../styles/searchbar.css";
 
-const SearchBar = ({setSearchTerm}) => {
+const SearchBar = () => {
+  const { 
+    // setSearchTerm, searchTerm,
+     addTerm } = useContext(HomeContext);
+
   return (
     <div className="search_container">
-      <input onChange={e => setSearchTerm(e.target.value)}></input>
+      <input onChange={(e) => addTerm(e.target.value)}></input>
     </div>
   );
 };

@@ -15,10 +15,10 @@
 }
 
 .info_container {
-  border: 1px solid #edeff1;
   margin-top: 10px;
   border-radius: 6px;
   padding: 8px;
+  background-color: #2A2F3B;
 }
 
 .info_container div {

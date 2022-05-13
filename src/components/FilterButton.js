@@ -1,12 +1,30 @@
-import React, { useState } from 'react'
+import React, {useContext } from "react";
+import HomeContext from "../context/HomeContext";
 
-const FilterButton = ({text}) => {
-    const [buttonColor, setButtonColor]= useState()
-    return (
-        <div>
-            <button>{text}</button>
-        </div>
-    )
-}
+const FilterButton = ({ text }) => {
+  const { setGroupBy, groupBy, setButtonColor, buttonColor } =
+    useContext(HomeContext);
 
-export default FilterButton
+  return (
+    <div>
+      <button
+        style={{
+          backgroundColor:
+            groupBy === ""
+              ? buttonColor
+              : text === "Continent"
+              ? "#7B52F0"
+              : "",
+        }}
+        onClick={() => {
+          setGroupBy(text);
+          setButtonColor(text);
+        }}
+      >
+        {text}
+      </button>
+    </div>
+  );
+};
+
+export default FilterButton;

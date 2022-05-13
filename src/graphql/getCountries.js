@@ -2,7 +2,7 @@ import gql from 'graphql-tag';
 
 const GET_COUNTRIES = gql `
 
-query continents {
+{
   countries {
     code 
     name

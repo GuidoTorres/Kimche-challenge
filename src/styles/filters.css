@@ -20,4 +20,7 @@
   width: 100px;
   height: 40px;
   border-radius: 6px;
+  background-color: #7B52F0;
+  color: white;
+  outline: none;
 }
