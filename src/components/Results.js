@@ -54,17 +54,20 @@ const Results = () => {
     <div className="result_container">
       {Object.entries(newArray).map(([key, value]) => (
         <div key={key} className="result">
-          <p>{key}</p>
+          <p className="result_title">{key ? key : "All countries"}</p>
           {value.map((item, i) => (
             <div key={i} className="info_container">
-              <span>{item.emoji}</span>
-              <div className="flex_title">
-                <p> {item.name}</p>
+              <div className="info_container_emoji">
+                <span>{item.emoji}</span>
+                <p className="info_container_country"> {item.name}</p>
+              </div>
+
+              <div className="info_container_extra_data">
                 <p> Capital: {item.capital}</p>
                 <p> Currency: {item.currency}</p>
                 <p> Phone: {item.phone}</p>
                 {item.languages.map((lan, i) => (
-                  <p key={i}> Language: {lan.name}</p>
+                  <p key={i}> {"Language: " + lan.name}</p>
                 ))}
               </div>
             </div>

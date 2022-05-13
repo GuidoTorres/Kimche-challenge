@@ -1,0 +1,11 @@
+.buttons_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.buttons_container button {
+  font-size: 14px;
+  outline: none;
+  border: none;
+}

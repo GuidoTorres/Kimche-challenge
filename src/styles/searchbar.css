@@ -5,16 +5,6 @@
   align-items: center;
 }
 
-.search_container input {
-  width: 100%;
-  height: 30px;
-  border-radius: 6px;
-  border: none;
-  padding-left: 5px;
-  font-size: 15px;
-  outline: none;
-}
-
 .input_search {
   display: flex;
   justify-content: center;
@@ -23,4 +13,21 @@
   padding: 4px;
   border-radius: 8px;
   width: 100%;
+  padding-left: 10px;
+}
+
+.input_search .icon {
+  color: rgb(32, 30, 30);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.input_search input {
+  width: 100%;
+  height: 30px;
+  border-radius: 6px;
+  border: none;
+  padding-left: 5px;
+  font-size: 15px;
+  outline: none;
 }

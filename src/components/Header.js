@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <header className="header_container">
       <h1>Country Search</h1>
-      <p>Search by continent or language</p>
+      <p>Some random text</p>
     </header>
   );
 };

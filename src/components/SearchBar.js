@@ -10,8 +10,8 @@ const SearchBar = () => {
   return (
     <div className="search_container">
       <div className="input_search">
-        <FontAwesomeIcon icon={faSearch} />
-        <input onChange={(e) => addTerm(e.target.value)}></input>
+        <FontAwesomeIcon icon={faSearch} className="icon"/>
+        <input onChange={(e) => addTerm(e.target.value)} placeholder="Search here..."></input>
       </div>
     </div>
   );

@@ -6,13 +6,9 @@
 }
 
 .filters_container p {
-  color: #edeff1;
+  color: white;
   font-weight: bold;
-}
-
-.buttons_container {
-  display: flex;
-  justify-content: space-between;
+  font-size: 18px;
 }
 
 .filters_container button {
@@ -20,7 +16,6 @@
   width: 100px;
   height: 40px;
   border-radius: 6px;
-  background-color: #7B52F0;
   color: white;
   outline: none;
 }
