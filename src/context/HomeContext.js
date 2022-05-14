@@ -4,7 +4,11 @@ const HomeContext = createContext();
 
 export function HomeProvider({ children }) {
   const [searchTerm, setSearchTerm] = useState("");
-  const [groupBy, setGroupBy] = useState("");
+  const [groupBy, setGroupBy] = useState("Continent");
+  const [selectedButton, setSelectedButton] = useState({
+    continent: true,
+    language: false,
+  });
 
   const addTerm = (term) => {
     setSearchTerm(term);
@@ -21,6 +25,8 @@ export function HomeProvider({ children }) {
         groupBy,
         addTerm,
         filterGroupBy,
+        selectedButton,
+        setSelectedButton,
       }}
     >
       {children}

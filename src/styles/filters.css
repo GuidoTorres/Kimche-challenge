@@ -19,3 +19,15 @@
   color: white;
   outline: none;
 }
+
+@media screen and (min-width: 450px) {
+  .filters_container {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .filters_container button {
+    margin-left: 20px;
+  }
+}

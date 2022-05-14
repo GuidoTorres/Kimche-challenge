@@ -11,14 +11,14 @@ const Results = () => {
   const { data, error, loading } = useQuery(GET_COUNTRIES);
   const [newArray, setNewArray] = useState();
 
-  const filterDatabyContinent = () => {
+  const filterData = () => {
     const newData = _.chain(data?.countries ? data.countries : "")
 
       //Aqui verifico que el texto del input este incluido dentro de algun nombre de pais
       .filter((item) => {
         return item.name.toLowerCase().includes(searchTerm);
       })
-      // luego lo agrupo por continent
+      // luego lo agrupo por continente o lenguaje dependiendo del boton seleccionado
       .groupBy((o) => {
         return groupBy === "Continent"
           ? o.continent.name
@@ -32,8 +32,10 @@ const Results = () => {
   };
 
   useEffect(() => {
-    filterDatabyContinent();
-  }, [searchTerm]);
+    filterData();
+
+    if (searchTerm === "") setNewArray("");
+  }, [searchTerm, groupBy]);
 
   if (loading)
     return (
@@ -53,25 +55,43 @@ const Results = () => {
   return (
     <div className="result_container">
       {Object.entries(newArray).map(([key, value]) => (
-        <div key={key} className="result">
-          <p className="result_title">{key ? key : "All countries"}</p>
-          {value.map((item, i) => (
-            <div key={i} className="info_container">
-              <div className="info_container_emoji">
-                <span>{item.emoji}</span>
-                <p className="info_container_country"> {item.name}</p>
-              </div>
+        <div className="result" key={key}>
+          <div>
+            <p className="result_title">{key}</p>
+          </div>
+          <div className="result_flex">
+            {value.map((item, i) => (
+              <div className="info_container" key={i}>
+                <div className="info_container_emoji">
+                  <span>{item.emoji}</span>
+                  <p className="info_container_country"> {item.name}</p>
+                </div>
 
-              <div className="info_container_extra_data">
-                <p> Capital: {item.capital}</p>
-                <p> Currency: {item.currency}</p>
-                <p> Phone: {item.phone}</p>
-                {item.languages.map((lan, i) => (
-                  <p key={i}> {"Language: " + lan.name}</p>
-                ))}
+                <div className="info_container_extra_data">
+                  <p>
+                    <strong>Capital:</strong> {item.capital}
+                  </p>
+                  <p>
+                    <strong>Currency:</strong> {item.currency}
+                  </p>
+                  <p>
+                    <strong>Phone:</strong> {item.phone}
+                  </p>
+                  <div className="languages">
+                    <p className="language_text">Language: </p>
+                    <div className="languages_flex">
+                      {item.languages.map((lan, i, arr) => (
+                        <p key={i}>
+                          {"  " + lan.name}
+                          {i != arr.length - 1 ? ", " : ""}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       ))}
     </div>
