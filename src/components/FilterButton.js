@@ -12,7 +12,6 @@ const FilterButton = () => {
         style={{
           backgroundColor:
             selectedButton.continent === true ? "#7B52F0" : "#2A2F3B",
-          // backgroundColor: groupBy === "Continent" ? "#7B52F0" : "#2A2F3B",
         }}
         onClick={() => {
           filterGroupBy("Continent");
@@ -25,8 +24,6 @@ const FilterButton = () => {
         style={{
           backgroundColor:
             selectedButton.language === true ? "#7B52F0" : "#2A2F3B",
-
-          // backgroundColor: groupBy === "Language" ? "#7B52F0" : "#2A2F3B",
         }}
         onClick={() => {
           filterGroupBy("Language");

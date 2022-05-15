@@ -2,22 +2,6 @@
   height: 100vh;
 }
 
-
-
-@media screen and (min-width: 550px) {
-  .home_container {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-}
-
-@media screen and (min-width: 700px) {
-  .home_container {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-}
-
 @media screen and (min-width: 1000px) {
   .home_container {
     padding-left: 50px;
@@ -25,5 +9,9 @@
   }
 }
 
-
-
+@media screen and (min-width: 1400px) {
+  .home_container {
+    padding-left: 230px;
+    padding-right: 230px;
+  }
+}

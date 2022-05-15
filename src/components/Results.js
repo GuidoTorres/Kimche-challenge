@@ -11,31 +11,29 @@ const Results = () => {
   const { data, error, loading } = useQuery(GET_COUNTRIES);
   const [newArray, setNewArray] = useState();
 
-  const filterData = () => {
-    const newData = _.chain(data?.countries ? data.countries : "")
-
-      //Aqui verifico que el texto del input este incluido dentro de algun nombre de pais
-      .filter((item) => {
-        return item.name.toLowerCase().includes(searchTerm);
-      })
-      // luego lo agrupo por continente o lenguaje dependiendo del boton seleccionado
-      .groupBy((o) => {
-        return groupBy === "Continent"
-          ? o.continent.name
-          : groupBy === "Language"
-          ? o.languages[0]?.name
-          : "";
-      })
-      // y el punto value es para poder obtener el array porque sino devuelve un wrapperlodash con data que no sirve
-      .value();
-    setNewArray(newData);
-  };
-
   useEffect(() => {
+    //en esta funcion encadeno con chain las funciones de lodash
+    //primero filtro si el valor de searchTerm se encuentra dentro del nombre de algun pais
+    //luego lo agrupo con groupBy dependiendo si es por contiente o lenguaje y obtengo el valor
+    const filterData = () => {
+      const newData = _.chain(data?.countries ? data.countries : "")
+        .filter((item) => {
+          return item.name.toLowerCase().includes(searchTerm);
+        })
+        .groupBy((o) => {
+          return groupBy === "Continent"
+            ? o.continent.name
+            : groupBy === "Language"
+            ? o.languages[0]?.name
+            : "";
+        })
+        .value();
+      setNewArray(newData);
+    };
     filterData();
 
     if (searchTerm === "") setNewArray("");
-  }, [searchTerm, groupBy]);
+  }, [searchTerm, groupBy, data]);
 
   if (loading)
     return (
@@ -52,6 +50,10 @@ const Results = () => {
     );
   if (error) return <p>`Error...${error.message}`</p>;
 
+  //una vez filtrada la data lo muesto en el html
+  //y uso Object.entries ya que al filtrar obtengo objetos en el cual
+  // la key es el continente o lenguaje y el value es la data del pais y de ahí
+  //solo lo muesto con un map
   return (
     <div className="result_container">
       {Object.entries(newArray).map(([key, value]) => (
@@ -59,7 +61,7 @@ const Results = () => {
           <div>
             <p className="result_title">{key}</p>
           </div>
-          <div className="result_flex">
+          <div className="result_data">
             {value.map((item, i) => (
               <div className="info_container" key={i}>
                 <div className="info_container_emoji">

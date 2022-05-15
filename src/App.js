@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import { HomeProvider } from "./context/HomeContext";
 
 const client = new ApolloClient({
-  uri: "https://countries.trevorblades.com/",
+  uri: process.env.REACT_APP_GRAPHQL_ENDPOINT,
 });
 
 const App = () => (
