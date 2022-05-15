@@ -67,7 +67,7 @@ const Results = () => {
             {value.map((item, i) => (
               <div className="info_container" key={i}>
                 <div className="info_container_emoji">
-                  <span>{item.emoji}</span>
+                  <span role="img" aria-label="flag">{item.emoji}</span>
                   <p className="info_container_country"> {item.name}</p>
                 </div>
 
