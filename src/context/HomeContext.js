@@ -13,7 +13,7 @@ export function HomeProvider({ children }) {
   });
 
   const addTerm = (term) => {
-    setSearchTerm(term);
+    setSearchTerm(term.toLowerCase());
   };
 
   const filterGroupBy = (text) => {
