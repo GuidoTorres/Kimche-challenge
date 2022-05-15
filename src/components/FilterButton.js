@@ -3,7 +3,7 @@ import HomeContext from "../context/HomeContext";
 import "../styles/filterButton.css";
 
 const FilterButton = () => {
-  const { filterGroupBy, groupBy, selectedButton, setSelectedButton } =
+  const { filterGroupBy, selectedButton, setSelectedButton } =
     useContext(HomeContext);
 
   return (

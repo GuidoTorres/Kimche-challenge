@@ -83,7 +83,7 @@ const Results = () => {
                       {item.languages.map((lan, i, arr) => (
                         <p key={i}>
                           {"  " + lan.name}
-                          {i != arr.length - 1 ? ", " : ""}
+                          {i !== arr.length - 1 ? ", " : ""}
                         </p>
                       ))}
                     </div>

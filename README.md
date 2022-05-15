@@ -1,6 +1,19 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Desafío para Software Engineers
 
-## Available Scripts
+Nombre postulante: Hector Guido Torres Durand
+Link a la app en producción: https://6280fabf9cfdfb34e7f49ee3--astonishing-druid-553b70.netlify.app/
+
+
+# Respuesta a la pregunta:
+
+Considero que si no estuviese implementado, se podria usar Redis ya que al ser un motor de BD que no se guarda en el disco duro sino en memoria, los tiempos de lectura y escritura se reducen.
+
+Otra opcion seria en base NOSQL, ya que al guardarse todo la información en documentos o entidades en
+vez de tablas, permite un manejo mas rápido de millones de datos. Este tipo de BD tambien suelen ser mas
+escalables.
+
+
+# Available Scripts
 
 In the project directory, you can run:
 
