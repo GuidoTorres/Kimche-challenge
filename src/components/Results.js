@@ -11,17 +11,30 @@ const Results = () => {
   const { data, error, loading } = useQuery(GET_COUNTRIES);
   const [newArray, setNewArray] = useState();
 
+  const flagEmojiToPNG = (flag) => {
+    var countryCode = Array.from(flag, (codeUnit) => codeUnit.codePointAt())
+      .map((char) => String.fromCharCode(char - 127397).toLowerCase())
+      .join("");
+    return (
+      <img src={`https://flagcdn.com/24x18/${countryCode}.png`} alt="flag" />
+    );
+  };
+
   useEffect(() => {
     //en esta funcion encadeno con chain las funciones de lodash
-    //primero filtro el termino de busqueda con starswith para ver si el pais inicia con esa letra o termino
+    //primero filtro el termino de busqueda con starswith para ver si el pais inicia con esa letra
     //luego lo agrupo con groupBy dependiendo si es por contiente o lenguaje y obtengo el valor
     const filterData = () => {
       const newData = _.chain(data?.countries ? data.countries : "")
         .filter((item) => {
-          return item.name.toLowerCase()
-          // .includes(searchTerm)
-          .startsWith(searchTerm);
+          return (
+            item.name
+              .toLowerCase()
+              // .includes(searchTerm)
+              .startsWith(searchTerm)
+          );
         })
+
         .groupBy((o) => {
           return groupBy === "Continent"
             ? o.continent.name
@@ -67,7 +80,9 @@ const Results = () => {
             {value.map((item, i) => (
               <div className="info_container" key={i}>
                 <div className="info_container_emoji">
-                  <span role="img" aria-label="flag">{item.emoji}</span>
+                  <span role="img" aria-label="flag">
+                    {flagEmojiToPNG(item.emoji)}
+                  </span>
                   <p className="info_container_country"> {item.name}</p>
                 </div>
 
