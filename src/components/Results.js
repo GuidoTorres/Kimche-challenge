@@ -11,12 +11,14 @@ const Results = () => {
   const { data, error, loading } = useQuery(GET_COUNTRIES);
   const [newArray, setNewArray] = useState();
 
+  //use esta funcion ya que el emoji solo se muestra en mac pero no en windows
+
   const flagEmojiToPNG = (flag) => {
     var countryCode = Array.from(flag, (codeUnit) => codeUnit.codePointAt())
       .map((char) => String.fromCharCode(char - 127397).toLowerCase())
       .join("");
     return (
-      <img src={`https://flagcdn.com/24x18/${countryCode}.png`} alt="flag" />
+      <img src={`https://flagcdn.com/40x30/${countryCode}.png`} alt="flag" />
     );
   };
 
